@@ -2,7 +2,7 @@
     "compilerOptions": {
       "target": "ESNext",
       "module": "CommonJS",
-      "lib": ["ESNext"],
+      "lib": ["ESNext", "dom"],
       "types": ["node", "playwright"]
     }
   }
