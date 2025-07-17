@@ -83,7 +83,7 @@ test.describe('Login UI', () => {
     await loginPage.login('', '');
     // Validate required field error
     const validationMessage = await loginPage.emailInput.evaluate((input: HTMLInputElement) => input.validationMessage);
-    expect(validationMessage).toContain(data.MISSING_REQUIRED_FIELDS);
+    expect(validationMessage.toLowerCase()).toContain(data.MISSING_REQUIRED_FIELDS.toLowerCase());
 
     // API validation
     const apiResponse = await page.request.post(`${API_BASE_URL}/${ENDPOINTS.verifyLogin}`, {

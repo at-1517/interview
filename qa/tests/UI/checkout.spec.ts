@@ -73,10 +73,8 @@ test.describe('Checkout UI', () => {
     //If Order API was available, this would be a good place to retrieve the order that was just placed through API and verify it
 
     // Verify and click Continue button, then verify landing on Home page
-    const continueButton = page.locator('a[data-qa="continue-button"]');
-    await expect(continueButton).toBeVisible();
-    await continueButton.click();
-    // Wait for navigation and verify home page loaded (e.g., by checking for login/logout link)
+    await expect(orderPlacedPage.continueButton).toBeVisible();
+    await orderPlacedPage.continueButton.click();
     await expect(homePage.carousel).toBeVisible();
 
   });   

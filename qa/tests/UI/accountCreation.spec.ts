@@ -84,7 +84,7 @@ test.describe('Account Creation UI', () => {
 
     // Validate browser tooltip message for required fields
     const requiredValidationMessage = await signupPage.signupEmailInput.evaluate((input: HTMLInputElement) => input.validationMessage);
-    expect(requiredValidationMessage).toContain(data.MISSING_REQUIRED_FIELDS);
+    expect(requiredValidationMessage.toLowerCase()).toContain(data.MISSING_REQUIRED_FIELDS.toLowerCase());
   });
 
   test('Create new account - NEGATIVE - invalid email', async ({ page }) => {
@@ -101,6 +101,8 @@ test.describe('Account Creation UI', () => {
     
     // Validate browser tooltip message for invalid email
     const invalidEmailValidationMessage = await signupPage.signupEmailInput.evaluate((input: HTMLInputElement) => input.validationMessage);
-    expect(invalidEmailValidationMessage).toContain(data.INVALID_EMAIL_ERROR);
+    const actualError = invalidEmailValidationMessage.trim().toLowerCase();
+    const possibleErrors = [data.INVALID_EMAIL_ERROR, data.INVALID_EMAIL_ERROR_2, data.INVALID_EMAIL_ERROR_3];
+    expect(possibleErrors.some(msg => actualError.includes(msg.toLowerCase()))).toBe(true);
   });
 });

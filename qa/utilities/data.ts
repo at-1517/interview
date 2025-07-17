@@ -47,11 +47,12 @@ export const MESSAGE_ACCOUNT_CREATED = 'Account Created!';
 export const MESSAGE_ACCOUNT_CREATED_TEXT = 'You can now take advantage of member privileges to enhance your online shopping experience with us.';
 
 export const EMAIL_EXISTS_ERROR = 'Email Address already exist!';
-export const MISSING_REQUIRED_FIELDS = 'Please fill out this field.';
+export const MISSING_REQUIRED_FIELDS = 'fill out this field'; //partial message to verify in multiple browsers
 export const INVALID_EMAIL = 'invalid_email';
 export const INVALID_EMAIL_ADDRESS = 'invalid_email@example.com';
 export const INVALID_EMAIL_ERROR = `Please include an '@' in the email address.`;
-
+export const INVALID_EMAIL_ERROR_2 = 'Please enter an email address.';
+export const INVALID_EMAIL_ERROR_3 = 'Enter an email address';
 export const INVALID_PASSWORD = 'invalid_password';
 export const INVALID_CREDENTIALS_ERROR = 'Your email or password is incorrect!';
 
